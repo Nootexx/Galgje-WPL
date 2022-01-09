@@ -13,3 +13,15 @@ C:\Users\jensj\source\repos\Galgje WPL\Galgje WPL\obj\Debug\Galgje WPL.csproj.Ge
 C:\Users\jensj\source\repos\Galgje WPL\Galgje WPL\obj\Debug\Galgje WPL.csproj.CoreCompileInputs.cache
 C:\Users\jensj\source\repos\Galgje WPL\Galgje WPL\obj\Debug\Galgje WPL.exe
 C:\Users\jensj\source\repos\Galgje WPL\Galgje WPL\obj\Debug\Galgje WPL.pdb
+C:\Users\jensj\source\repos\Galgje WPL\Galgje WPL\bin\Debug\Images\10.jpg
+C:\Users\jensj\source\repos\Galgje WPL\Galgje WPL\bin\Debug\Images\0.jpg
+C:\Users\jensj\source\repos\Galgje WPL\Galgje WPL\bin\Debug\Images\1.jpg
+C:\Users\jensj\source\repos\Galgje WPL\Galgje WPL\bin\Debug\Images\2.jpg
+C:\Users\jensj\source\repos\Galgje WPL\Galgje WPL\bin\Debug\Images\3.jpg
+C:\Users\jensj\source\repos\Galgje WPL\Galgje WPL\bin\Debug\Images\4.jpg
+C:\Users\jensj\source\repos\Galgje WPL\Galgje WPL\bin\Debug\Images\5.jpg
+C:\Users\jensj\source\repos\Galgje WPL\Galgje WPL\bin\Debug\Images\6.jpg
+C:\Users\jensj\source\repos\Galgje WPL\Galgje WPL\bin\Debug\Images\7.jpg
+C:\Users\jensj\source\repos\Galgje WPL\Galgje WPL\bin\Debug\Images\8.jpg
+C:\Users\jensj\source\repos\Galgje WPL\Galgje WPL\bin\Debug\Images\9.jpg
+C:\Users\jensj\source\repos\Galgje WPL\Galgje WPL\obj\Debug\Galgje WPL_Content.g.cs

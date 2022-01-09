@@ -36,6 +36,7 @@ namespace Galgje
         char letter;
         //bool letterIsInWoord = false;
         char[] arraySterren;
+        //string woordTest = new string(arraySterren);
         int timerSeconden;
         bool gewonnen;
         public DispatcherTimer timerSpel = new DispatcherTimer();
@@ -47,6 +48,7 @@ namespace Galgje
             InitSpel();
             timerSpel.Tick += TimerSpel_Tick;
             timerSpel.Interval = TimeSpan.FromSeconds(1);
+            ImgMan.Source= new BitmapImage(new Uri($@"/Images/10.jpg", UriKind.Relative));
         }
 
         private void TimerSpel_Tick(object sender, EventArgs e)
@@ -120,6 +122,16 @@ namespace Galgje
             TxtBTimer.Visibility = Visibility.Hidden;
             TxtBTimer.Foreground = Brushes.Black;
             TxtBTimer.FontSize = 16;
+        }
+        string sterretjes = "";
+
+        private void ltrStreep()
+        {
+            for (int i = 0; i < geheimeWoord.Length; i++)
+            {
+                sterretjes += "*";
+            }
+            tbTestDiego.Text = sterretjes;
         }
 
         public void RaadStatus()
@@ -304,7 +316,7 @@ namespace Galgje
         {
             InitSpel();
         }
-
+        string juisteLetters = "";
         private void BtnRaad_Click(object sender, RoutedEventArgs e)
         {
             //RaadPoging();
@@ -312,20 +324,53 @@ namespace Galgje
             ManWordGehangen();
             while (levens > 0 && !string.IsNullOrWhiteSpace(TxtRaad.Text))
             {
-                if (TxtRaad.Text == geheimeWoord)
+                if (TxtRaad.Text.Length >= 2)
                 {
-                    gewonnen = true;
-                    EindSpelScherm(gewonnen);
+                    if (TxtRaad.Text == geheimeWoord)
+                    {
+                        gewonnen = true;
+                        EindSpelScherm(gewonnen);
+                    }
+                    else
+                    {
+                        VerminderingVanLeven();
+                        ManWordGehangen();
+                        TxtBInfo.Text = $"{levens} Levens";
+                    }
                 }
                 else
                 {
-                    VerminderingVanLeven();
-                    ManWordGehangen();
-                    TxtBInfo.Text = $"{levens} Levens";
+                    if (geheimeWoord.Contains(TxtRaad.Text))
+                    {
+                        juisteLetters += TxtRaad.Text;
+                        Test(TxtRaad.Text);
+                    }
+                    else
+                    {
+                        //-1 leven
+                    }
+                    if(sterretjes == geheimeWoord)
+                    {
+                        gewonnen = true;
+                        EindSpelScherm(gewonnen);
+                    }
                 }
+               
                 break;
             }
             TxtRaad.Clear();
+        }
+
+        private void Test(string letter)
+        {
+            int index = geheimeWoord.IndexOf(letter);
+            while (index >= 0)
+            {
+                sterretjes = sterretjes.Remove(index, 1);
+                sterretjes = sterretjes.Insert(index, letter);
+                index = geheimeWoord.IndexOf(letter, index + 1);
+            }
+            TxtInput.Text = sterretjes;
         }
 
         private void BtnVerbergWoord_Click(object sender, RoutedEventArgs e)
@@ -333,6 +378,7 @@ namespace Galgje
             if (TxtInput.Text.Length > 1 && !string.IsNullOrWhiteSpace(TxtInput.Text))
             {
                 RaadStatus();
+                ltrStreep();
                 RefreshKeyboard = true;
                 TxtBTimer.Visibility = Visibility.Visible;
                 timerSpel.Start();
@@ -410,7 +456,7 @@ namespace Galgje
             timerSpel.Stop();
             if (gewonnenCheck)
             {
-                MessageBox.Show($"profficiat het woord was: { geheimeWoord}");
+                MessageBox.Show($"proficiat het woord was: { geheimeWoord}");
             }
             else
             {
