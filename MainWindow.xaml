@@ -97,6 +97,8 @@
                     <TextBox x:Name="TxtRaad" Background="Black" BorderThickness="2" BorderBrush="Gray" Foreground="White" FontWeight="Bold" FontSize="18" Height="50" TextAlignment="Center"/>
                 </StackPanel>
                 <Button x:Name="BtnRaad" Background="Black" Foreground="White" FontWeight="Bold" FontSize="18"  Content="Raad" Height="50" Margin="10" Click="BtnRaad_Click" Style="{DynamicResource ButtonWpfStyle}"/>
+                <ListBox x:Name="lstHoogstescores" Height="100"/>
+                <Button x:Name="btnLeaderboard" Content="Leaderboard" Click="btnLeaderboard_Click"/>
             </StackPanel>
 
 

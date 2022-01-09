@@ -26,7 +26,7 @@ namespace Galgje
         {
             InitializeComponent();
         }
-
+        List<string> hoogstescorelijst = new List<string>();
         public string geheimeWoord;
         public string raadPoging;
         public string foutLetters;
@@ -158,6 +158,20 @@ namespace Galgje
             BtnVerbergWoord.Visibility = Visibility.Hidden;
             ImgMan.Visibility = Visibility.Visible;
             TxtBInfo.Text = $"{levens} Levens";
+        }
+
+        private void genereren()
+        {
+
+        }
+
+        private void updatenlijst()
+        {
+            lstHoogstescores.Items.Clear();
+            foreach(string s in hoogstescorelijst)
+            {
+                lstHoogstescores.Items.Add(s);
+            }
         }
 
         //public void LetterGeraden()
@@ -466,5 +480,9 @@ namespace Galgje
             InitSpel();
         }
 
+        private void btnLeaderboard_Click(object sender, RoutedEventArgs e)
+        {
+            updatenlijst();
+        }
     }
 }
