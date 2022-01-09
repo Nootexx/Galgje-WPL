@@ -1,0 +1,15 @@
+C:\Users\jensj\source\repos\Galgje WPL\Galgje WPL\bin\Debug\Galgje WPL.exe.config
+C:\Users\jensj\source\repos\Galgje WPL\Galgje WPL\bin\Debug\Galgje WPL.exe
+C:\Users\jensj\source\repos\Galgje WPL\Galgje WPL\bin\Debug\Galgje WPL.pdb
+C:\Users\jensj\source\repos\Galgje WPL\Galgje WPL\obj\Debug\Galgje WPL.csproj.AssemblyReference.cache
+C:\Users\jensj\source\repos\Galgje WPL\Galgje WPL\obj\Debug\MainWindow.g.cs
+C:\Users\jensj\source\repos\Galgje WPL\Galgje WPL\obj\Debug\App.g.cs
+C:\Users\jensj\source\repos\Galgje WPL\Galgje WPL\obj\Debug\Galgje WPL_MarkupCompile.cache
+C:\Users\jensj\source\repos\Galgje WPL\Galgje WPL\obj\Debug\Galgje WPL_MarkupCompile.lref
+C:\Users\jensj\source\repos\Galgje WPL\Galgje WPL\obj\Debug\MainWindow.baml
+C:\Users\jensj\source\repos\Galgje WPL\Galgje WPL\obj\Debug\Galgje WPL.g.resources
+C:\Users\jensj\source\repos\Galgje WPL\Galgje WPL\obj\Debug\Galgje_WPL.Properties.Resources.resources
+C:\Users\jensj\source\repos\Galgje WPL\Galgje WPL\obj\Debug\Galgje WPL.csproj.GenerateResource.cache
+C:\Users\jensj\source\repos\Galgje WPL\Galgje WPL\obj\Debug\Galgje WPL.csproj.CoreCompileInputs.cache
+C:\Users\jensj\source\repos\Galgje WPL\Galgje WPL\obj\Debug\Galgje WPL.exe
+C:\Users\jensj\source\repos\Galgje WPL\Galgje WPL\obj\Debug\Galgje WPL.pdb
