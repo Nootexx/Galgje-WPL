@@ -41,7 +41,8 @@ namespace Galgje
         bool gewonnen;
         public DispatcherTimer timerSpel = new DispatcherTimer();
         bool RefreshKeyboard;
-
+        char[] arrayLetters;
+        bool hintgebruikt = true;
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -131,7 +132,7 @@ namespace Galgje
             {
                 sterretjes += "*";
             }
-            tbTestDiego.Text = sterretjes;
+            TxtInput.Text = sterretjes;
         }
 
         public void RaadStatus()
@@ -391,6 +392,7 @@ namespace Galgje
         {
             if (TxtInput.Text.Length > 1 && !string.IsNullOrWhiteSpace(TxtInput.Text))
             {
+                hintgebruikt = false;
                 RaadStatus();
                 ltrStreep();
                 RefreshKeyboard = true;
@@ -471,10 +473,12 @@ namespace Galgje
             if (gewonnenCheck)
             {
                 MessageBox.Show($"proficiat het woord was: { geheimeWoord}");
+                hintgebruikt = true;
             }
             else
             {
                 MessageBox.Show($"Je hebt verloren\nHet juiste woord was: {geheimeWoord}");
+                hintgebruikt = true;
             }
             TxtBTimer.Visibility = Visibility.Hidden;
             InitSpel();
@@ -483,6 +487,44 @@ namespace Galgje
         private void btnLeaderboard_Click(object sender, RoutedEventArgs e)
         {
             updatenlijst();
+        }
+
+        private void MenuItem_Afsluiten_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void MenuItem_Hint_Click(object sender, RoutedEventArgs e)
+        {
+            if (hintgebruikt == false)
+            {
+
+                string alfabet = "abcdefghijklmnopqrstuvwyz";
+                foreach (char c in (geheimeWoord))
+                {
+                    alfabet.Replace(c, '\0');
+                }
+
+                foreach (char c in (foutLetters))
+                {
+                    alfabet.Replace(c, '\0');
+                }
+
+                char[] mogelijkecharacters = alfabet.ToCharArray();
+                char randomhint = mogelijkecharacters[new Random().Next(0, mogelijkecharacters.Length)];
+                MessageBox.Show($"Er zit geen {randomhint} in het woord!");
+                hintgebruikt = true;
+                
+            }
+            else
+            {
+                MessageBox.Show("Kan geen hint geven!");
+            }
+        }
+
+        private void MenuItem_Reset_Click(object sender, RoutedEventArgs e)
+        {
+            InitSpel();
         }
     }
 }
